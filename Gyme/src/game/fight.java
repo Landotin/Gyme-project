@@ -21,14 +21,40 @@ import javax.swing.SwingConstants;
 
 public class fight extends gyme {
 	private inventory inventory;
+	
+	
 	public fight() {   
 		super();
+	
 		inventory = new inventory();
 	}
-			
+	//Method para pagnabili na dip maeenable na yung button
+	public void updateDipButton(JButton dipButton) {
+	    if (isDipPurchased) {
+	        dipButton.setEnabled(true);
+	    } else {
+	        dipButton.setEnabled(false);
+	    }
+	}
+	//Method para maupdate kung napipindot plank button kung nabili na
+	public void updatePlankButton(JButton plankButton) {
+	    if (isPlankPurchased) {
+	        plankButton.setEnabled(true);
+	    } else {
+	        plankButton.setEnabled(false);
+	    }
+	}
+	//Method para maupdate kung napipindot plank button kung nabili na
+	public void updateJumpingJackButton(JButton jumpingButton) {
+	    if (isPlankPurchased) {
+	        jumpingButton.setEnabled(true);
+	    } else {
+	        jumpingButton.setEnabled(false);
+	    }
+	}
 	 public static void main(String[] args) {
-		 
-		 //By initiating this it sets the health according to the items equipped from inventory
+		 fight fightInitialize = new fight();
+		//By initiating this it sets the health according to the items equipped from inventory
 		 int initialHealth = gyme.health; 
 
 		//Frame for the battle
@@ -144,9 +170,10 @@ public class fight extends gyme {
 	     skilldip.setFont(new Font("Arial", Font.BOLD, 14));
 	     skilldip.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true));
 	     skilldip.setFocusPainted(false);
-	     skilldip.setEnabled(false);
+	     fightInitialize.updateDipButton(skilldip);
 	    
-	     
+	    
+	     //plank skill exercise
 	     
 	     JButton skillplanks = new JButton("Plank");
 	     skillplanks.setBounds(205, 320, 100, 40);
@@ -155,9 +182,10 @@ public class fight extends gyme {
 	     skillplanks.setFont(new Font("Arial", Font.BOLD, 14));
 	     skillplanks.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true));
 	     skillplanks.setFocusPainted(false);
+	     fightInitialize.updatePlankButton(skillplanks);
 	    
 	     
-	     
+	     //Jumping jack skill exercise
 	     JButton skilljumpjacks = new JButton("Jumping Jacks");
 	     skilljumpjacks.setBounds(140, 365, 120, 40);
 	     skilljumpjacks.setBackground(VIBRANT_PURPLE);
@@ -165,6 +193,7 @@ public class fight extends gyme {
 	     skilljumpjacks.setFont(new Font("Arial", Font.BOLD, 14));
 	     skilljumpjacks.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true));
 	     skilljumpjacks.setFocusPainted(false);
+	     fightInitialize.updateJumpingJackButton(skilljumpjacks);
 	  
 	     
 	     	     

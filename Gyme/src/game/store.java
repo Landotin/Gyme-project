@@ -115,40 +115,65 @@ public class store extends gyme {
 	         public void actionPerformed(ActionEvent e) {
 	             if (gyme.xp[0] >= 10) {
 	                 gyme.xp[0] -= 10;     
+	                 gyme.isDipPurchased = true;
 	                 s_xp.setText("XP: " + gyme.xp[0]); 
+	                 if (gyme.isDipPurchased) {
+	                 JOptionPane.showMessageDialog(f_store, "Dip skill purchased!");
+	                    s_exer1.setEnabled(false);  // Disable button after purchase
+	                 }
 
-	             } else {
+	             } 
+	       
+	                    else {
 	            	 JOptionPane.showMessageDialog(f_store, "You don't have enough XP to buy this skill!");
 	             }
 	         }
 	     });
+	     	if (gyme.isDipPurchased) {
+        
+                s_exer1.setEnabled(false);  // Disable button after purchase
+             }
 
 	     
 	     s_exer2.addActionListener(new ActionListener() {
 	         public void actionPerformed(ActionEvent e) {
 	             if (gyme.xp[0] >= 10) {
 	                 gyme.xp[0] -= 10; 
+	                 gyme.isPlankPurchased = true;
 	                 s_total2.setText(String.valueOf(Integer.parseInt(s_total2.getText()) + 1)); 
+	                 JOptionPane.showMessageDialog(f_store, "Plank skill purchased!");
 	                 s_xp.setText("XP: " + gyme.xp[0]); 
+	                 s_exer2.setEnabled(false);
+	               
 	                 
 	             } else {
 	            	 JOptionPane.showMessageDialog(f_store, "You don't have enough XP to buy this skill!");
 	             }
 	         }
 	     });
+	     if (gyme.isPlankPurchased) {
+                s_exer2.setEnabled(false);  // Disable button after purchase
+             }
 
 	     
 	     s_exer3.addActionListener(new ActionListener() {
 	         public void actionPerformed(ActionEvent e) {
 	             if (gyme.xp[0] >= 10) {
 	                 gyme.xp[0] -= 10; // Deduct XP
+	                 gyme.isJumpingJacksPurchased = true;
 	                 s_total3.setText(String.valueOf(Integer.parseInt(s_total3.getText()) + 1)); 
+	                 JOptionPane.showMessageDialog(f_store, "Jumping Jack skill purchased!");
 	                 s_xp.setText("XP: " + gyme.xp[0]);
+	                 s_exer3.setEnabled(false);
 	                
 	             } else {
 	            	 JOptionPane.showMessageDialog(f_store, "You don't have enough XP to buy this skill!");
 	             }
 	         }
+	         
 	     });
+	     if (gyme.isJumpingJacksPurchased) {
+             s_exer3.setEnabled(false);  // Disable button after purchase
+          }
 	 }
 }

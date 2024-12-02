@@ -19,6 +19,9 @@ public class gyme extends JFrame {
     
 	//Variables for exercise
     static int[] xp = {0};
+    public static boolean isDipPurchased = false;
+    public static boolean isPlankPurchased = false;
+    public static boolean isJumpingJacksPurchased = false;
     static int[] totalPushUps = {0};
     static int[] totalSitUps = {0};
     static int[] totalPullUps = {0};
@@ -31,7 +34,7 @@ public class gyme extends JFrame {
 	static int reps5 = 0;
 	static int goal = 1; 
     
-    //Default statas
+    //Default stats
     static int health = 100;
     static int damage = 5;
     static int armor = 3;
