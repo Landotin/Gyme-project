@@ -459,7 +459,7 @@ public class homepage extends gyme {
 	    	        cb_exer5.setSelected(true);
 	    	        
 	    	        gyme.xp[0] += 25;
-	    	        JOptionPane.showMessageDialog(null, "Congratulations! You gained 10 XP!");
+	    	       
 	    	        
 	    	        isCooldownActive = true;
 	    	        reg_complete.setEnabled(false);

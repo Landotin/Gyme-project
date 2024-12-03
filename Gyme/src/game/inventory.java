@@ -41,9 +41,11 @@ public class inventory extends gyme {
        characterPanel.setBounds(20, 20, 200, 200);
        characterPanel.setBorder(BorderFactory.createTitledBorder("Character"));
        characterPanel.setLayout(new BorderLayout());
+       
        JLabel characterAvatar = new JLabel("Avatar", SwingConstants.CENTER);
        characterAvatar.setFont(new Font("Arial", Font.BOLD, 16));
        characterPanel.add(characterAvatar, BorderLayout.CENTER);
+       
        //Stats Labels
        JLabel healthLabel = new JLabel("Health: " + gyme.health);
        healthLabel.setBackground(DARK_PURPLE);

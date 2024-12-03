@@ -151,11 +151,11 @@ public class gyme extends JFrame {
         b_register.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true));
         b_register.setFocusPainted(false);
         
-        JButton b_view = new JButton("👀");
+        JButton b_view = new JButton("Show");
         b_view.setBounds(560, 310, 50, 40);
         b_view.setBackground(SOFT_PINK);
         b_view.setForeground(Color.WHITE);
-        b_view.setFont(new Font("Arial", Font.BOLD, 16));
+        b_view.setFont(new Font("Arial", Font.BOLD, 14));
         b_view.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true));
         b_view.setFocusPainted(false);
         
@@ -233,11 +233,11 @@ public class gyme extends JFrame {
         passRegErrorLabel.setForeground(Color.RED);
         
         //Register buttons
-        JButton b_view1 = new JButton("👀");
+        JButton b_view1 = new JButton("Show");
         b_view1.setBounds(560, 310, 50, 40);
         b_view1.setBackground(SOFT_PINK);
         b_view1.setForeground(Color.WHITE);
-        b_view1.setFont(new Font("Arial", Font.BOLD, 16));
+        b_view1.setFont(new Font("Arial", Font.BOLD, 14));
         b_view1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true));
         b_view1.setFocusPainted(false);
         
@@ -393,10 +393,10 @@ public class gyme extends JFrame {
             public void actionPerformed(ActionEvent e) {     
                 if(pf_pass.getEchoChar() == '\u2022') {
                     pf_pass.setEchoChar((char) 0); //Show password
-                    b_view.setText("🙈");
+                    b_view.setText("Hide");
                 } else {
                     pf_pass.setEchoChar('\u2022'); //Hide password
-                    b_view.setText("👀");
+                    b_view.setText("Show");
                 }    
             }
         });
@@ -406,10 +406,10 @@ public class gyme extends JFrame {
             public void actionPerformed(ActionEvent e) {     
                 if(pf_pass1.getEchoChar() == '\u2022') {
                     pf_pass1.setEchoChar((char) 0); //Show password
-                    b_view1.setText("🙈");
+                    b_view1.setText("Hide");
                 } else {
                     pf_pass1.setEchoChar('\u2022'); //Hide password
-                    b_view1.setText("👀");
+                    b_view1.setText("Show");
                 }    
             }
         });

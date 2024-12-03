@@ -195,7 +195,6 @@ public class fight extends gyme {
 	     skilljumpjacks.setFocusPainted(false);
 	     fightInitialize.updateJumpingJackButton(skilljumpjacks);
 	  
-	     
 	     	     
 	     
 	     //Decorative Title
@@ -348,6 +347,9 @@ public class fight extends gyme {
 	     final int[] pullUpCounter = {0};
 	     final int[] squatCounter = {0};
 	     final int[] sitUpCounter = {0};
+	     final int[] dipCounter = {0};
+	     final int[] jumjacksCounter = {0};
+	     final int[] planksCounter = {0};
 	     final boolean[] blockNext = {false};
 	    
 	     
@@ -361,6 +363,7 @@ public class fight extends gyme {
 	             }
 	         }
 	     });
+	     
 	    
 	     //Pull-Up Skill
 	     skillPullUp.addActionListener(new ActionListener() {
@@ -397,6 +400,41 @@ public class fight extends gyme {
 	             }
 	         }
 	     });
+	     
+	  // Dip Skill
+	     skilldip.addActionListener(new ActionListener() {
+	         public void actionPerformed(ActionEvent e) {
+	             dipCounter[0]++;
+	             dipProgress.setText("Dips: " + dipCounter[0]); 
+	             if (dipCounter[0] % 5 == 0) {
+	                 feedback.setText("Dip Bonus: +5 Damage!");
+	             }
+	         }
+	     });
+
+	     // Jumping Jack Skill
+	     skilljumpjacks.addActionListener(new ActionListener() {
+	         public void actionPerformed(ActionEvent e) {
+	             jumjacksCounter[0]++;
+	             jumjacksProgress.setText("Jumping Jacks: " + jumjacksCounter[0]); 
+	             if (jumjacksCounter[0] % 5 == 0) {
+	                 feedback.setText("Jumping Jacks Bonus: +5 Health!");
+	             }
+	         }
+	     });
+
+	     // Planks Skill
+	     skillplanks.addActionListener(new ActionListener() {
+	         public void actionPerformed(ActionEvent e) {
+	             planksCounter[0]++;
+	             planksProgress.setText("Planks: " + planksCounter[0]); 
+	             if (planksCounter[0] % 5 == 0) {
+	                 feedback.setText("Planks Bonus: +7 Damage!");
+	             }
+	         }
+	     });
+	     
+	     
 	    
 	     //Attack logic
 	     player1Attack.addActionListener(new ActionListener() {
@@ -473,6 +511,9 @@ public class fight extends gyme {
 	             pullUpCounter[0] = 0;
 	             squatCounter[0] = 0;
 	             sitUpCounter[0] = 0;
+	             dipCounter[0] = 0;
+	             jumjacksCounter[0] = 0;
+	             planksCounter[0] = 0;
 	             blockNext[0] = false;
 	             restartButton.setVisible(false);
 	             
@@ -480,13 +521,19 @@ public class fight extends gyme {
 	             pullUpProgress.setText("Pull-Ups: 0");
 	             squatProgress.setText("Squats: 0");
 	             sitUpProgress.setText("Sit-Ups: 0");
+	             dipProgress.setText("Dips: 0");
+	             jumjacksProgress.setText("Jumping Jacks: 0");
+	             planksProgress.setText("Planks: 0");
 	         }
 	     });
 	     
 	     battle_back.addActionListener(new ActionListener() {
 	         public void actionPerformed(ActionEvent e) {
+	        	 gyme.health = initialHealth;
 	        	 f_homepage.setVisible(true);
 	    		 f_battle.setVisible(false);
+	    		 player1Health.setValue(initialHealth);
+	    		 
 	         }
 	     });  
 	}
