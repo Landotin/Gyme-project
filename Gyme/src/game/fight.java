@@ -46,7 +46,7 @@ public class fight extends gyme {
 	}
 	//Method para maupdate kung napipindot plank button kung nabili na
 	public void updateJumpingJackButton(JButton jumpingButton) {
-	    if (isPlankPurchased) {
+	    if (isJumpingJacksPurchased) {
 	        jumpingButton.setEnabled(true);
 	    } else {
 	        jumpingButton.setEnabled(false);

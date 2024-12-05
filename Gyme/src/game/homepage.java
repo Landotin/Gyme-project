@@ -114,6 +114,15 @@ public class homepage extends gyme {
 	     b_complete.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true));
 	     b_complete.setFocusPainted(false);
 	     
+	    //Tutorial button
+	     JButton b_tutorial = new JButton("TUTORIAL");
+	     b_tutorial.setBounds(460, 340, 100, 50);
+	     b_tutorial.setBackground(VIBRANT_PURPLE);
+	     b_tutorial.setForeground(Color.WHITE);
+	     b_tutorial.setFont(new Font("Arial", Font.BOLD, 14));
+	     b_tutorial.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true));
+	     b_tutorial.setFocusPainted(false);
+	    
 	     cooldown = new JLabel("Cooldown: Ready"); 
 	     cooldown.setBounds(10, 180, 250, 30);
 	     cooldown.setForeground(SOFT_PINK);
@@ -271,6 +280,7 @@ public class homepage extends gyme {
 	     p_exercise.add(b3);
 	     p_exercise.add(b4);
 	     p_exercise.add(b5);
+	
 
 	     p_exercise.add(count1);
 	     p_exercise.add(count2);
@@ -297,6 +307,7 @@ public class homepage extends gyme {
 	     registerPanel.add(b_settings);
 	     registerPanel.add(p_task);
 	     registerPanel.add(p_exercise);
+	     registerPanel.add(b_tutorial);
 	     
 	     
 	     
@@ -310,7 +321,31 @@ public class homepage extends gyme {
 	      		
 	      	 }
 	       });
-	     
+	     b_tutorial.addActionListener(new ActionListener() {
+	      	 public void actionPerformed(ActionEvent e) {
+	      		 String message = "<html><body style='width: 300px;'>" +
+		                    "<h2>Welcome to GYME! Here’s how the game works:</h2>" +
+		                    "<h3>Exercise to Gain Experience (XP):</h3>" +
+		                    "<p>You need to perform various exercises like push-ups, sit-ups, and squats. Each time you complete a set amount of repetitions, you earn experience points (XP).</p>" +
+		                    "<h3>Level Up Your Character:</h3>" +
+		                    "<p>As you accumulate XP, your character becomes stronger. Leveling up increases your character's stats, such as health, damage, armor, agility, and luck.</p>" +
+		                    "<h3>Equip Items for Boosts:</h3>" +
+		                    "<p>You can equip different items (like helmets, armor, and weapons) to enhance your character's abilities. Each item provides specific bonuses to your stats, making your character more powerful in battles.</p>" +
+		                    "<h3>Engage in Battles:</h3>" +
+		                    "<p>Use your character in battles against enemies. Your stats and equipped items determine your effectiveness in combat.</p>" +
+		                    "<h3>Complete Daily Tasks:</h3>" +
+		                    "<p>Completing daily tasks earns you additional XP and rewards. Make sure to check off tasks to maximize your gains!</p>" +
+		                    "<h3>Cooldowns:</h3>" +
+		                    "<p>After completing tasks or exercises, there may be cooldown periods before you can perform them again. Be strategic about when to exercise and complete tasks to optimize your progress.</p>" +
+		                    "<h3>Track Your Progress:</h3>" +
+		                    "<p>Keep an eye on your character’s stats and XP to see how much you’ve improved over time. Use this information to decide which exercises to focus on for the best results.</p>" +
+		                    "<p>By following these mechanics, you can effectively progress in GYME, making your character stronger and more capable of facing challenges. Enjoy your fitness journey!</p>" +
+		                    "</body></html>";
+
+		            JOptionPane.showMessageDialog(null, message, "GYME Tutorial", JOptionPane.INFORMATION_MESSAGE);
+	      		
+	      	 }
+	       });
 	     
 	     b_attack.addActionListener(new ActionListener() {
 	         public void actionPerformed(ActionEvent e) {
@@ -472,7 +507,7 @@ public class homepage extends gyme {
 	    	 
 	    	 if (canCompleteExerciseTask) {
 	    	        if (cb_exer1.isSelected() && cb_exer2.isSelected() && cb_exer3.isSelected() && cb_exer4.isSelected() && cb_exer5.isSelected()) {
-	    	            JOptionPane.showMessageDialog(null, "Congratulations! You gained 10 XP!");
+	    	            JOptionPane.showMessageDialog(null, "Congratulations! You gained 25 XP!");
 
 	    	            cb_exer1.setSelected(false);
 	    	            cb_exer2.setSelected(false);
